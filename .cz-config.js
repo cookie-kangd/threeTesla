@@ -13,12 +13,11 @@ module.exports = {
     { value: "回滚", name: "回滚:    代码回退" },
   ],
 
-  scopes: [
-    { name: "模块1" },
-    { name: "模块2" },
-    { name: "模块3" },
-    { name: "模块4" },
-  ],
+  scopes: [],
+  allowTicketNumber: false,
+  isTicketNumberRequired: false,
+  ticketNumberPrefix: "TICKET-",
+  ticketNumberRegExp: "\\d{1,5}",
 
   // it needs to match the value for field type. Eg.: 'fix'
   /*
@@ -37,16 +36,16 @@ module.exports = {
     scope: "选择一个scope (可选):",
     // used if allowCustomScopes is true
     customScope: "Denote the SCOPE of this change:",
-    subject: "短说明:\n",
+    subject: "简短说明(最多40个字):",
     body: '长说明，使用"|"换行(可选)：\n',
     breaking: "非兼容性说明 (可选):\n",
-    footer: "关联关闭的issue，例如：#31, #34(可选):\n",
-    confirmCommit: "确定提交说明?",
+    footer: "关联关闭的issue，例如：#12, #34(可选):\n",
+    confirmCommit: "确定提交?",
   },
-
   allowCustomScopes: true,
   allowBreakingChanges: ["特性", "修复"],
-
+  // skip any questions you want
+  skipQuestions: ["scope", "body", "breaking"],
   // limit subject length
   subjectLimit: 100,
 };
