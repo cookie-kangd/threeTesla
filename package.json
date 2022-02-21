@@ -6,9 +6,11 @@
   "homepage": "https://github.com/a85115695",
   "scripts": {
     "start": "vite",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "git add . && git-cz && git push"
   },
   "dependencies": {
     "three": "^0.137.5",
@@ -36,6 +38,14 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-add": "lint-staged",
+      "pre-push": "lint-staged"
     }
   }
 }
