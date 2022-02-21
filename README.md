@@ -13,3 +13,6 @@ three.js 入门
 git 拉取代码
 npm i 安装依赖
 npm start 启动项目
+
+git 动态设置 push 默认分支为当前分支
+git config --global push.default current
