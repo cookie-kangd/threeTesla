@@ -10,7 +10,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "prepare": "husky install",
-    "commit": "git add . && git-cz && git push"
+    "commit": "git add . && git-cz && git push origin master"
   },
   "dependencies": {
     "three": "^0.137.5",
