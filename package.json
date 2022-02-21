@@ -6,16 +6,36 @@
   "homepage": "https://github.com/a85115695",
   "scripts": {
     "start": "vite",
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install"
   },
   "dependencies": {
     "three": "^0.137.5",
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@vitejs/plugin-vue": "^2.2.0",
+    "commitizen": "^4.2.4",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.9.0",
+    "eslint-plugin-vue": "^8.4.1",
+    "husky": "^7.0.4",
     "vite": "^2.8.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,vue}": [
+      "eslint",
+      "echo '格式通过'"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
   }
 }
