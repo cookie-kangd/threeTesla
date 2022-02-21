@@ -45,6 +45,7 @@ module.exports = {
   allowCustomScopes: true,
   allowBreakingChanges: ["特性", "修复"],
   // skip any questions you want
+  // 1111
   skipQuestions: ["scope", "body", "breaking"],
   // limit subject length
   subjectLimit: 100,
